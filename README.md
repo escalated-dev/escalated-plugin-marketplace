@@ -1,29 +1,28 @@
-# Escalated Plugin: Marketplace
+# @escalated-dev/plugin-marketplace
 
-In-app plugin marketplace browser for discovering, installing, and managing Escalated plugins. Browse available integrations, channels, AI tools, and workflow enhancements from the Escalated ecosystem.
+Browse and install plugins from the Escalated marketplace registry. Supports self-hosted registries.
 
-## Features (Planned)
-- Browse available plugins with categories
-- Search and filter plugins
-- One-click plugin installation
-- Plugin detail pages with screenshots and reviews
-- Automatic update checking and notifications
-- Installed plugins management
-- Plugin ratings and reviews
-- Featured and popular plugins sections
-- Plugin version compatibility checking
-- Plugin signature verification
+## Features
 
-## Installation
+- Catalog browser with search and category filtering
+- Plugin detail view with screenshots and readme
+- One-click install via registry download URL or custom zip URL
+- Automatic daily update checks with admin broadcast notification
+- "Browse Marketplace" button injected into admin plugins page
 
-### Via ZIP Upload
-1. Download the latest release ZIP from this repository
-2. In Escalated admin, go to **Settings > Plugins**
-3. Click **Upload Plugin** and select the ZIP file
-4. Activate the plugin from the plugins list
+## Hooks
 
-### Requirements
-- Escalated >= 0.6.0
+| Type | Hook | Description |
+|------|------|-------------|
+| Filter | `admin.plugins.actions` | Adds "Browse Marketplace" to the plugins admin action menu |
+| Cron | `every:1d` | Checks for plugin updates and notifies admin if found |
 
-## Status
-This plugin is in early development. See TODO.md for implementation status.
+## Endpoints
+
+| Method | Path | Capability |
+|--------|------|-----------|
+| GET | `/catalog` | `manage_plugins` |
+| GET | `/detail/:slug` | `manage_plugins` |
+| POST | `/install` | `manage_plugins` |
+| GET | `/check-updates` | `manage_plugins` |
+| GET/POST | `/settings` | `manage_settings` |

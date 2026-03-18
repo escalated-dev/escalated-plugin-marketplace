@@ -1,11 +1,17 @@
 {
-    "name": "@escalated-dev/escalated-plugin-marketplace",
-    "version": "0.1.0",
-    "description": "Plugin marketplace browser to discover and install plugins",
-    "main": "src/index.js",
-    "peerDependencies": {
-        "@escalated-dev/escalated": "^0.6.0",
-        "vue": "^3.4.0"
-    },
-    "keywords": ["escalated", "plugin", "marketplace", "discover", "install", "extensions", "app-store"]
+  "name": "@escalated-dev/plugin-marketplace",
+  "version": "0.1.0",
+  "description": "Plugin marketplace browser and installer — TypeScript SDK version",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@escalated-dev/plugin-sdk": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
