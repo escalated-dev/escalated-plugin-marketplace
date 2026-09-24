@@ -1,5 +1,7 @@
 # Escalated Plugin: Marketplace
 
+[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-marketplace.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-marketplace/)
+
 Browse, install, and update plugins from the Escalated marketplace registry. Supports self-hosted registries for private plugin distribution.
 
 ## Features
