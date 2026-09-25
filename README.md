@@ -51,4 +51,4 @@ npm install @escalated-dev/plugin-marketplace
 
 ## License
 
-MIT
+MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
