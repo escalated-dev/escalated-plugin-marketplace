@@ -1,54 +1,64 @@
-# Escalated Plugin: Marketplace
+<p align="center">
+  <a href="https://escalated.dev"><img src="https://raw.githubusercontent.com/escalated-dev/escalated/main/docs/assets/readme/logo.png" width="56" height="56" alt="Escalated"></a>
+</p>
 
-[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-marketplace.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-marketplace/)
+<h1 align="center">Marketplace plugin for Escalated</h1>
 
-Browse, install, and update plugins from the Escalated marketplace registry. Supports self-hosted registries for private plugin distribution.
+<p align="center">Browse, install and update plugins from inside Escalated.</p>
+
+<p align="center">
+  <a href="https://escalated.dev"><b>Website</b></a> ·
+  <a href="https://escalated.dev/docs"><b>Docs</b></a> ·
+  <a href="https://escalated.dev/cloud"><b>Cloud</b></a> ·
+  <a href="https://github.com/escalated-dev/escalated-plugin-marketplace/releases"><b>Releases</b></a>
+</p>
+
+This plugin adds a plugin catalogue to the Escalated admin, with one-click installs and daily update checks, and it can point at your own registry for private plugins. It's for admins who want to manage plugins without touching the server.
 
 ## Features
 
-- Catalog browser with search, category filtering, and sorting
-- Plugin detail view with screenshots and readme
-- One-click install via registry download URL or custom zip URL
-- Automatic daily update checks with admin broadcast notification
-- "Browse Marketplace" button injected into the admin plugins page
-- Install status tracking with version comparison
+<table>
+<tr>
+<td width="33%" valign="top">
 
-## Configuration
+**Browse**
+- Search, filter by category, sort
+- Detail view with screenshots and readme
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `registry_url` | url | No | Base URL of the plugin registry. Defaults to `https://marketplace.escalated.dev`. |
-| `auto_check_updates` | boolean | No | Automatically check for plugin updates daily. Defaults to `true`. |
+</td>
+<td width="33%" valign="top">
 
-## Admin Pages
+**Install**
+- One-click install from registry or zip URL
+- Install status with version comparison
 
-- **marketplace** — Browse the plugin catalog with search, categories, and install actions.
+</td>
+<td width="33%" valign="top">
 
-## Hooks
+**Updates**
+- Daily update checks with admin notification
+- Browse Marketplace button on plugins page
 
-### Filters
-- `admin.plugins.actions` — Adds a "Browse Marketplace" action to the admin plugins page.
+</td>
+</tr>
+</table>
 
-### Cron
-- `every:1d` — Checks for available plugin updates and notifies admins via broadcast.
+<p align="center"><sub><a href="docs/features.md">Every feature in detail</a></sub></p>
 
-## Endpoints
+<p align="center">
+  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
+  <a href="https://vuejs.org"><img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js"></a>
+</p>
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/catalog` | Browse the plugin catalog with optional category, search, and sort filters. |
-| GET | `/detail/:slug` | Get detailed information about a specific plugin. |
-| POST | `/install` | Install a plugin by slug from the registry. |
-| GET | `/check-updates` | Check all installed plugins for available updates. |
-| GET | `/settings` | Get plugin configuration. |
-| POST | `/settings` | Save plugin configuration. |
+## Learn more
 
-## Installation
-
-```bash
-npm install @escalated-dev/plugin-marketplace
-```
+- [Every feature](docs/features.md)
+- [Configuration, hooks and endpoints](docs/reference.md)
+- [Plugin SDK](https://github.com/escalated-dev/escalated-plugin-sdk): how Escalated plugins are built
+- [Escalated docs](https://escalated.dev/docs)
+- [Escalated](https://github.com/escalated-dev/escalated), the main repo
 
 ## License
 
-MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
+MIT. Copyright (c) 2026 Escalated.dev. See [LICENSE](LICENSE).
